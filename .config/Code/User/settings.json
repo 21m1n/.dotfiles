@@ -1,66 +1,115 @@
-{
-    // general
+{   
+    // general settings
+    "window.zoomLevel": 1,
+    "breadcrumbs.enabled": true,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.emptyWindow": false,
+    "security.workspace.trust.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "json.schemas": [],
+    "indentRainbow.colors": [
+        "rgba(38, 70, 83,0.15)",
+        "rgba(42, 157, 143,0.15)",
+        "rgba(233, 196, 106, 0.15)",
+        "rgba(244, 162, 97,0.15)",
+        "rgba(231, 111, 81,0.15)",
+        "rgba(231, 111, 81,0.1)",
+        "rgba(231, 111, 81,0.05)",
+        "rgba(231, 111, 81,0.025)"
+    ], 
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.CustomBrowser": "chrome:PrivateMode",
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true
+    },
+
+    // editor settings
+    "ruff.importStrategy": "useBundled",
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.renderControlCharacters": true,
+    "editor.fontSize": 14,
+    "editor.tabSize": 2,
+    "editor.fontWeight": "200",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Consolas ligaturized v2'",
+    "editor.codeActionsOnSave": {
+        "source.unusedImports": "explicit",
+        "source.organizeImports": "always"
+    },
+
+    //explorer settings 
+    "explorer.excludeGitIgnore": false,
+    "explorer.autoReveal": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
+    // workbench settings
+    "workbench.settings.editor": "json",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Monokai Pirokai - Arctic Frost",
     "workbench.colorCustomizations": {},
-    "sourcery.codeLens": false,
-    "jupyter.widgetScriptSources": [
-        "jsdelivr.com",
-        "unpkg.com"
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+
+    // terminal
+    "terminal.integrated.lineHeight": 1.4,
+    "terminal.integrated.fontWeight": 400,
+    "terminal.integrated.fontFamily": "Fira Mono for Powerline",
+    "terminal.integrated.inheritEnv": false,
+
     // vim
     "vim.smartRelativeLine": true,
     "vim.useCtrlKeys": false,
-    // explorer
-    "explorer.enableDragAndDrop": true,
-    "explorer.confirmDelete": false,
-    "explorer.fileNesting.patterns": {
-        "*.ts": "${capture}.js",
-        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-        "*.jsx": "${capture}.js",
-        "*.tsx": "${capture}.ts",
-        "tsconfig.json": "tsconfig.*.json",
-        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-        "*.sqlite": "${capture}.${extname}-*",
-        "*.db": "${capture}.${extname}-*",
-        "*.sqlite3": "${capture}.${extname}-*",
-        "*.db3": "${capture}.${extname}-*",
-        "*.sdb": "${capture}.${extname}-*",
-        "*.s3db": "${capture}.${extname}-*"
+
+    // git settings
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.showActionButton": {
+        "commit": false,
+        "publish": false,
+        "sync": false
     },
-    "terminal.integrated.inheritEnv": false,
-    //editor 
-    "editor.fontFamily": "'Consolas ligaturized v3', 'monospace', monospace",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 14,
-    "editor.tabSize": 2,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "always",
-        "source.fixAll.eslint": "always",
-        "source.fixAll.markdownlint": "always",
-        "source.fixAll.sortJSON": "never",
-        "source.generate.finalModifiers": "always",
-        "source.organizeImports": "always",
-        "source.sortMembers": "always"
-    },
-    "editor.formatOnSave": true,
-    // python 
+    
+    // python
     "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff"
+        "editor.formatOnType": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        }
     },
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "pylint.enabled": true,
+    
     // json
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+
     // docker 
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
-    // git 
-    "git.autofetch": true,
+
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+
     // shell 
     "[shellscript]": {
         // "files.eol": "\n",
         "editor.defaultFormatter": "foxundermoon.shell-format"
     }
+    
+    
 }
